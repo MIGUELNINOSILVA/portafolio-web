@@ -45,3 +45,7 @@ document.querySelector('.contact-form').addEventListener('submit', (e) => {
     e.preventDefault();
     // Aquí iría la lógica de envío del formulario
 });
+
+document.querySelector('.hamburger').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+});

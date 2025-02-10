@@ -1,3 +1,12 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -104,10 +113,14 @@ main {
 
 .hero-image {
     position: relative;
-    width: 500px; /* Ajusta el tamaño según necesites */
-    height: 500px; /* Ajusta el tamaño según necesites */
-    border-radius: 50%; /* Esto hace que el contenedor sea un círculo */
-    overflow: hidden; /* Esto asegura que la imagen no se salga del círculo */
+    width: 500px;
+    /* Ajusta el tamaño según necesites */
+    height: 500px;
+    /* Ajusta el tamaño según necesites */
+    border-radius: 50%;
+    /* Esto hace que el contenedor sea un círculo */
+    overflow: hidden;
+    /* Esto asegura que la imagen no se salga del círculo */
     /* background-color: #ffcc00; */
     background: linear-gradient(45deg, #ff1b6b, #9c45ff);
     display: flex;
@@ -136,7 +149,7 @@ main {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    
+
     transform: translateY(30px);
     transition: all 0.6s ease-out;
 }
@@ -284,15 +297,28 @@ main {
 
 .skills-grid {
     display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
 }
 
-.skills-grid > * {
-    flex: 1 1 80px; /* Esto permite que los elementos se ajusten y tengan un tamaño mínimo de 80px */
-  }
+.skills-grid:nth-child(even) {
+    transform: translateX(30px);
+    margin-left: auto;
+    width: 90%;
+}
+
+.skills-grid.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.skills-grid>* {
+    flex: 1 1 80px;
+    /* Esto permite que los elementos se ajusten y tengan un tamaño mínimo de 80px */
+}
 
 .skill-icon {
     width: 50px;
@@ -431,5 +457,275 @@ textarea.form-input {
 
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    }
+}
+
+/* Ajustes para el nav en dispositivos móviles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .language-select {
+        margin-top: 1rem;
+    }
+}
+
+/* Ajustes para el main en dispositivos móviles */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        padding: 6rem 1rem 2rem;
+        text-align: center;
+    }
+
+    .hero-text {
+        padding-right: 0;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: auto;
+        margin-top: 2rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+/* Ajustes para la sección de servicios en dispositivos móviles */
+@media (max-width: 768px) {
+    .services-section {
+        padding: 2rem 1rem;
+    }
+
+    .services-title {
+        font-size: 2rem;
+    }
+
+    .service-card {
+        padding: 1rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Ajustes para la sección de portafolio en dispositivos móviles */
+@media (max-width: 768px) {
+    .portfolio-section {
+        padding: 2rem 1rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-item {
+        margin-bottom: 1rem;
+    }
+
+    .portfolio-image {
+        height: 150px;
+    }
+
+    .portfolio-details {
+        padding: 1rem;
+    }
+
+    .portfolio-title {
+        font-size: 1rem;
+    }
+}
+
+/* Ajustes para la sección de habilidades en dispositivos móviles */
+@media (max-width: 768px) {
+    .skills-section {
+        padding: 2rem 1rem;
+    }
+
+    .skills-subtitle {
+        font-size: 1rem;
+    }
+
+    .skills-grid {
+        gap: 1rem;
+    }
+
+    .skills-grid>* {
+        flex: 1 1 60px;
+    }
+}
+
+/* Ajustes para la sección de contacto en dispositivos móviles */
+@media (max-width: 768px) {
+    .contact-section {
+        grid-template-columns: 1fr;
+        padding: 2rem 1rem;
+        gap: 2rem;
+    }
+
+    .contact-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-details {
+        margin-top: 1rem;
+    }
+
+    .social-icons {
+        gap: 0.5rem;
+    }
+
+    .social-icons a {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.5rem;
+    }
+
+    .form-input {
+        padding: 0.8rem;
+    }
+
+    .submit-button {
+        padding: 0.8rem 1.5rem;
+    }
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 8%;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(15, 22, 32, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #4a90e2;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #4a90e2;
+}
+
+.language-select {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #4a90e2;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+.language-select:hover {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+    .hero-image {
+        width: 100%;
+        height: 380px;
+    }
+
+    .hero-image img {
+        width: 50%;
+        height: 92%;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .language-select {
+        margin-top: 1rem;
+    }
+
+    .skills-grid {
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+
+    }
+
+    .skills-grid div {
+        width: 100%;
     }
 }
