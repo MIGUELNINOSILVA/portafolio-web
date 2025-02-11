@@ -84,3 +84,40 @@ form.addEventListener('submit', function (e) {
         alert('Ocurrió un error: ' + error.message);
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    portfolioItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Remueve la clase 'expanded' de todos los elementos
+            portfolioItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('expanded');
+                }
+            });
+
+            // Alterna la clase 'expanded' en el elemento clicado
+            item.classList.toggle('expanded');
+        });
+    });
+
+    portfolioItems.forEach(item => {
+        const hoverImage = item.getAttribute('data-hover-image');
+        
+        // Configuramos el fondo del pseudo-elemento ::after usando JavaScript
+        if (hoverImage) {
+            item.style.setProperty('--hover-image', `url(${hoverImage})`);
+        }
+
+        // Evento de mouseenter para cambiar la imagen
+        item.addEventListener('mouseenter', () => {
+            item.style.backgroundImage = `url(${hoverImage})`;
+        });
+
+        // Evento de mouseleave para restaurar la imagen original
+        item.addEventListener('mouseleave', () => {
+            item.style.backgroundImage = '';
+        });
+    });
+});

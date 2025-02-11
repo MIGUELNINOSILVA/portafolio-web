@@ -90,22 +90,80 @@
 
 
     <section id="portfolio" class="portfolio-section">
-        <h2 class="services-title" style="margin-top: 5rem;">PORTFOLIO</h2>
-        <div class="portfolio-grid">
-            <!-- Repeated 6 times -->
-            <div class="portfolio-item">
-                <img src="/api/placeholder/400/300" alt="Portfolio project" class="portfolio-image">
+        <h2 class="services-title" style="margin-top: 5rem;">PORTAFOLIO</h2>
+        <div class="portfolio-grid ">
+            <!-- Repetir este bloque por cada proyecto -->
+            <div class="portfolio-item" data-hover-image="./assets/LAISLA/LAISLA/isla2.png">
+                <img src="./assets/LAISLA/LAISLA/isla1.png" alt="Portfolio project" class="portfolio-image">
                 <div class="portfolio-details">
                     <div class="portfolio-title">
-                        <span>Website Coding (HTML, CSS, JS)</span>
+                        <span>CENTRO COMERCIAL LA ISLA (Página Web dinámica) (VUEJS, LARAVEL)</span>
                         <span class="external-link">↗</span>
                     </div>
                 </div>
+                <div class="portfolio-expanded-content">
+                    <p>Este es un proyecto de página web dinámica desarrollado con Vue.js y Laravel. Incluye
+                        características como autenticación de usuarios, gestión de páginas y un panel de
+                        administración.</p>
+                    <a href="https://www.laislacc.com.co/" target="_blank" class="cta-button">Ver más</a>
+                </div>
             </div>
-            <!-- ... Repeat for other portfolio items ... -->
+            <!-- ... Repite para otros proyectos ... -->
+            <!-- Repetir este bloque por cada proyecto -->
+            <div class="portfolio-item" data-hover-image="./assets/SINFA/SINFA/sinfa1.png">
+                <img src="./assets/SINFA/SINFA/sinfa2.png" alt="Portfolio project" class="portfolio-image">
+                <div class="portfolio-details">
+                    <div class="portfolio-title">
+                        <span>SINFA (ANGULAR, SPRINGBOOT)</span>
+                        <span class="external-link">↗</span>
+                    </div>
+                </div>
+                <div class="portfolio-expanded-content">
+                    <p>Este es un proyecto de una aplicación para un cliente con Angular y SpringBoot. Sistema ERP
+                        personalizado con funciones específicas del modelo de negocio.</p>
+                    <a href="https://erp.sinfacloud.co/#/" target="_blank" class="cta-button">Ver más</a>
+                </div>
+            </div>
+            <!-- ... Repite para otros proyectos ... -->
+
+            <!-- Repetir este bloque por cada proyecto -->
+            <div class="portfolio-item" data-hover-image="./assets/SEF/sef2.png">
+                <img src="./assets/SEF/sef1.png" alt="Portfolio project" class="portfolio-image">
+                <div class="portfolio-details">
+                    <div class="portfolio-title">
+                        <span>Sistema Empresarial (SEF) (VUEJS, LARAVEL)</span>
+                        <span class="external-link">↗</span>
+                    </div>
+                </div>
+                <div class="portfolio-expanded-content">
+                    <p>Este es un proyecto de una aplicación con Vue.js y Laravel. Modularizado para un sistema POS
+                        venta, cuenta con módulos de Inventarios, Facturación, Configuración, etc.</p>
+                    <a href="https://api.whatsapp.com/send/?phone=%2B573126078359&text&type=phone_number&app_absent=0"
+                        target="_blank" class="cta-button">Ver más</a>
+                </div>
+            </div>
+            <!-- ... Repite para otros proyectos ... -->
+
+            <!-- Repetir este bloque por cada proyecto -->
+            <div class="portfolio-item" data-hover-image="./assets/LEND/lend2.jpeg">
+                <img src="./assets/LEND/lend1.jpeg" alt="Portfolio project" class="portfolio-image">
+                <div class="portfolio-details">
+                    <div class="portfolio-title">
+                        <span>LendWise (Aplicación mobile de préstamos) (IONIC, NESTJS)</span>
+                        <span class="external-link">↗</span>
+                    </div>
+                </div>
+                <div class="portfolio-expanded-content">
+                    <p>Este es un proyecto de una aplicación mobile con IONIC(capacitor) y Nestjs. Modularizado para un sistema Multitenant
+                        siendo un SAAS.</p>
+                    <a href="https://api.whatsapp.com/send/?phone=%2B573126078359&text&type=phone_number&app_absent=0"
+                        target="_blank" class="cta-button">Ver más</a>
+                </div>
+            </div>
+            <!-- ... Repite para otros proyectos ... -->
         </div>
         <svg class="decorative-lines" viewBox="0 0 100 100">
-            <!-- Add decorative SVG lines here -->
+            <!-- Agrega líneas decorativas SVG aquí -->
         </svg>
     </section>
 
@@ -211,7 +269,8 @@
             <input type="email" placeholder="Email" class="form-input" name="email" id="email">
             <textarea placeholder="Message" class="form-input" name="message" id="message"></textarea>
             <button class="submit-button" type="submit">SEND</button>
-            <div class="success-message" id="successMessage">¡Gracias por contactarnos! Tu mensaje ha sido enviado.</div>
+            <div class="success-message" id="successMessage">¡Gracias por contactarnos! Tu mensaje ha sido enviado.
+            </div>
         </form>
     </section>
     <script src="./index.js">
