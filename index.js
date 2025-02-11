@@ -46,6 +46,41 @@ document.querySelector('.contact-form').addEventListener('submit', (e) => {
     // Aquí iría la lógica de envío del formulario
 });
 
-document.querySelector('.hamburger').addEventListener('click', function() {
+document.querySelector('.hamburger').addEventListener('click', function () {
     document.querySelector('.nav-links').classList.toggle('active');
+});
+
+// Enviar al gmail
+const form = document.getElementById('contactForm');
+const successMessage = document.getElementById('successMessage');
+
+form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+
+    // Endpoint de Formspree
+    const endpoint = 'https://formspree.io/f/xkgovnav';
+
+    // Datos del formulario
+    const formData = new FormData(form);
+
+    // Envía los datos usando Fetch API
+    fetch(endpoint, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            // Muestra el mensaje de éxito
+            form.reset();
+            successMessage.style.display = 'block';
+        } else {
+            throw new Error('Hubo un problema al enviar el formulario.');
+        }
+    })
+    .catch(error => {
+        alert('Ocurrió un error: ' + error.message);
+    });
 });

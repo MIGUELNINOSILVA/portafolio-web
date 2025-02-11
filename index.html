@@ -35,12 +35,13 @@
     <main>
         <div class="hero-text">
             <h1 class="title" style="margin-top: 5rem;">FULLSTACK<br>DEVELOPER</h1>
-            <p class="description">Soy Miguel Silva - <span>Web-Developer</span> apasionado por crear aplicaciones.</p>
+            <p class="description">Soy Miguel Silva - <span>Web-Mobile-Developer</span> apasionado por crear
+                aplicaciones.</p>
             <a href="#services" class="cta-button">VER MIS SERVICIOS</a>
         </div>
-        <div class="hero-image">
+        <!-- <div class="hero-image">
             <img src="/api/placeholder/400/600" alt="Professional photo">
-        </div>
+        </div> -->
     </main>
 
     <section id="services" class="services-section">
@@ -51,7 +52,8 @@
                     <span class="icon">💻</span>
                     Desarrollo Web
                 </h3>
-                <p>Creo sitios web basados en su diseño listo para usar. Ya sea una página de destino o una tarjeta de visita
+                <p>Creo sitios web basados en su diseño listo para usar. Ya sea una página de destino o una tarjeta de
+                    visita
                     sitio web, haré que se vea genial y funcione sin problemas en cualquier dispositivo.</p>
             </div>
             <div class="service-card">
@@ -67,7 +69,21 @@
                     <span class="icon">📱</span>
                     Desarrollo Mobile
                 </h3>
-                <p>¡Puedo desarrollar tu aplicación móvil desde cero! Creo aplicaciones modernas, intuitivas y fáciles de usar que se adaptan perfectamente a tu marca y objetivos. Ya sea para iOS, Android o multiplataforma, me aseguro de que tu app no solo tenga un diseño atractivo, sino también un rendimiento optimizado y una experiencia de usuario excepcional.</p>
+                <p>¡Puedo desarrollar tu aplicación móvil desde cero! Creo aplicaciones modernas, intuitivas y fáciles
+                    de usar que se adaptan perfectamente a tu marca y objetivos. Ya sea para iOS, Android o
+                    multiplataforma, me aseguro de que tu app no solo tenga un diseño atractivo, sino también un
+                    rendimiento optimizado y una experiencia de usuario excepcional.</p>
+            </div>
+            <div class="service-card">
+                <h3>
+                    <span class="icon">💻</span>
+                    Automatización de Despliegue de Apps
+                </h3>
+                <p>Implemento soluciones automatizadas para agilizar el proceso de despliegue de aplicaciones móviles y
+                    web. Desde la integración continua (CI) hasta la entrega continua (CD), configuro pipelines
+                    eficientes que garantizan despliegues rápidos, seguros y sin errores. Optimizo tus flujos de trabajo
+                    para que puedas enfocarte en el desarrollo, mientras la infraestructura se encarga de las
+                    actualizaciones y lanzamientos de manera eficiente.</p>
             </div>
         </div>
     </section>
@@ -189,13 +205,14 @@
                 </div>
             </div>
         </div>
-        <div class="contact-form">
+        <form class="contact-form" id="contactForm" method="POST">
             <h2>ENVÍAME UN MENSAJE</h2>
-            <input type="text" placeholder="Name" class="form-input">
-            <input type="email" placeholder="Email" class="form-input">
-            <textarea placeholder="Message" class="form-input"></textarea>
-            <button class="submit-button">SEND</button>
-        </div>
+            <input type="text" placeholder="Name" class="form-input" name="name" id="name">
+            <input type="email" placeholder="Email" class="form-input" name="email" id="email">
+            <textarea placeholder="Message" class="form-input" name="message" id="message"></textarea>
+            <button class="submit-button" type="submit">SEND</button>
+            <div class="success-message" id="successMessage">¡Gracias por contactarnos! Tu mensaje ha sido enviado.</div>
+        </form>
     </section>
     <script src="./index.js">
     </script>
