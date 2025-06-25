@@ -14404,7 +14404,7 @@ header.header-full-width.header--sticky.sticky {
 }
 
 .banner-twelve-area.with-bg-image {
-  background-image: url(../images/bg/01.webp) !important;
+  background-image: url(../profile-bg.png) !important;
   background-position: center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
@@ -19878,7 +19878,7 @@ section.clients-testimonial-area {
 }
 
 .banner-twelve-area.with-bg-image {
-  background-image: url(../images/bg/01.webp) !important;
+  background-image: url(../profile-bg.png) !important;
   background-position: center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
