@@ -66,25 +66,25 @@
       tmPk.tmpgradientAnimation();
       tmPk._clickDoc();
     },
-    shapeMove: function(){
-      $('.shape-move').mousemove(function(e){
-  
+    shapeMove: function () {
+      $('.shape-move').mousemove(function (e) {
+
         var wx = $(window).width();
         var wy = $(window).height();
-        
+
         var x = e.pageX - this.offsetLeft;
         var y = e.pageY - this.offsetTop;
-        
-        var newx = x - wx/2;
-        var newy = y - wy/2;
-        
-        $('.shape-image .shape').each(function(){
+
+        var newx = x - wx / 2;
+        var newy = y - wy / 2;
+
+        $('.shape-image .shape').each(function () {
           var speed = $(this).attr('data-speed');
-          if($(this).attr('data-revert')) speed *= -1;
-          TweenMax.to($(this), 1, {x: (1 - newx*speed), y: (1 - newy*speed)});
-          
+          if ($(this).attr('data-revert')) speed *= -1;
+          TweenMax.to($(this), 1, { x: (1 - newx * speed), y: (1 - newy * speed) });
+
         });
-        
+
       });
     },
 
@@ -93,44 +93,44 @@
         const overlay = document.querySelector(".background-overlay");
         const closeButton = document.querySelector(".tmp-close-button-audio");
         function checkAndObserve() {
-            const videoCard = document.querySelector(".tmp-intro-video-card-wrapper.position-right");
-            if (!videoCard) {
-                overlay.classList.remove("active"); 
-                return;
-            }
-            const observer = new MutationObserver((mutations) => {
-                mutations.forEach((mutation) => {
-                    if (mutation.attributeName === "class") {
-                        if (videoCard.classList.contains("is-expanded")) {
-                            overlay.classList.add("active");
-                        } else {
-                            overlay.classList.remove("active");
-                        }
-                    }
-                });
+          const videoCard = document.querySelector(".tmp-intro-video-card-wrapper.position-right");
+          if (!videoCard) {
+            overlay.classList.remove("active");
+            return;
+          }
+          const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+              if (mutation.attributeName === "class") {
+                if (videoCard.classList.contains("is-expanded")) {
+                  overlay.classList.add("active");
+                } else {
+                  overlay.classList.remove("active");
+                }
+              }
             });
-    
-            observer.observe(videoCard, { attributes: true });
+          });
+
+          observer.observe(videoCard, { attributes: true });
         }
-    
+
         checkAndObserve();
-    
+
         if (closeButton) {
           closeButton.addEventListener("click", function () {
-              overlay.classList.remove("active");
-              console.log("Overlay closed."); 
+            overlay.classList.remove("active");
+            console.log("Overlay closed.");
           });
         }
 
-      
-    });
-    
+
+      });
+
     },
 
-    tmpgradientAnimation : function name(params) {
+    tmpgradientAnimation: function name(params) {
       var e = document.querySelectorAll(".tmp-gradient-wrapper"),
         t = document.querySelectorAll(".tmp-gradient-animation");
-        gsap.to(e, { scale: 0.6, repeat: -1, duration: 3, yoyo: !0, ease: Linear.easeNone }).play(), gsap.to(t, { repeat: -1, duration: 3, rotation: 360, ease: Linear.easeNone }).play();
+      gsap.to(e, { scale: 0.6, repeat: -1, duration: 3, yoyo: !0, ease: Linear.easeNone }).play(), gsap.to(t, { repeat: -1, duration: 3, rotation: 360, ease: Linear.easeNone }).play();
     },
 
     tmpTiltAnimation: function () {
@@ -139,25 +139,25 @@
       if (tiltActive.length) {
         // Now initialize the jQuery plugin
         $('.paralax-image').tilt({
-          maxTilt:    12,
-          speed:      1000,
-          easing:     'cubic-bezier(.03,.98,.52,.99)',
+          maxTilt: 12,
+          speed: 1000,
+          easing: 'cubic-bezier(.03,.98,.52,.99)',
           transition: false,
           perspective: 1000,
-          scale:      1
+          scale: 1
         });
       }
-  },
+    },
 
-    tmpHover : function () {
+    tmpHover: function () {
       function handleMouseEnter(containerSelector, itemSelector) {
-        $(containerSelector).on('mouseenter', itemSelector, function() {
-            var self = this;
-            $(self).removeClass('tmp-control');
-            setTimeout(function() {
-                $(containerSelector + ' .active').removeClass('active').addClass('tmp-control');
-                $(self).removeClass('tmp-control').addClass('active');
-            }, 0);
+        $(containerSelector).on('mouseenter', itemSelector, function () {
+          var self = this;
+          $(self).removeClass('tmp-control');
+          setTimeout(function () {
+            $(containerSelector + ' .active').removeClass('active').addClass('tmp-control');
+            $(self).removeClass('tmp-control').addClass('active');
+          }, 0);
         });
       }
       // Apply the function to both elements
@@ -171,21 +171,21 @@
 
 
     _clickDoc: function (e) {
-        var inputblur, inputFocus;
-        inputblur = function (e) {
-            if (!$(this).val()) {
-                $(this).parent('.form-group').removeClass('focused');
-            }
-        };
-        inputFocus = function (e) {
+      var inputblur, inputFocus;
+      inputblur = function (e) {
+        if (!$(this).val()) {
+          $(this).parent('.form-group').removeClass('focused');
+        }
+      };
+      inputFocus = function (e) {
         $(this).parents('.form-group').addClass('focused');
-            };
-            tmPk._document
-            .on('blur', 'input,textarea,select', inputblur)
-            .on('focus', 'input:not([type="radio"]),input:not([type="checkbox"]),textarea,select', inputFocus)
-            
+      };
+      tmPk._document
+        .on('blur', 'input,textarea,select', inputblur)
+        .on('focus', 'input:not([type="radio"]),input:not([type="checkbox"]),textarea,select', inputFocus)
+
     },
- 
+
 
     serviceWidget: function () {
       function serviceAnimation() {
@@ -277,7 +277,7 @@
             prevEl: ".swiper-button-prev",
           },
           speed: 1000,
-         
+
           breakpoints: {
             0: {
               slidesPerView: 1,
@@ -603,7 +603,7 @@
 
     fonklsAnimation: function () {
       let endAnimation = document.getElementsByClassName('.end');
-      if(endAnimation.length){
+      if (endAnimation.length) {
         let endTl = gsap.timeline({
           repeat: -1,
           delay: 0.2,
@@ -697,17 +697,17 @@
         // Select all title and subtitle elements
         const heroTitles = document.querySelectorAll(".tmp-title-split");
         const heroSubtitles = document.querySelectorAll(".hero__sub-title");
-      
+
         // Loop through each pair of title and subtitle
         heroTitles.forEach((title, index) => {
           const subtitle = heroSubtitles[index]; // Match title with subtitle (if in pairs)
-      
+
           // Split the text for both title and subtitle
           const splitTitle = new SplitText(title, { type: "chars" });
           const splitSubtitle = subtitle
             ? new SplitText(subtitle, { type: "chars words" })
             : null;
-      
+
           // Create a timeline for each title and subtitle
           gsap.timeline({
             scrollTrigger: {
@@ -740,17 +740,17 @@
         // Select all title and subtitle elements
         const heroTitles = document.querySelectorAll(".tmp-title-split-2");
         const heroSubtitles = document.querySelectorAll(".hero__sub-title");
-      
+
         // Loop through each pair of title and subtitle
         heroTitles.forEach((title, index) => {
           const subtitle = heroSubtitles[index]; // Match title with subtitle (if in pairs)
-      
+
           // Split the text for both title and subtitle
           const splitTitle = new SplitText(title, { type: "chars" });
           const splitSubtitle = subtitle
             ? new SplitText(subtitle, { type: "chars words" })
             : null;
-      
+
           // Create a timeline for each title and subtitle
           gsap.timeline({
             scrollTrigger: {
@@ -779,8 +779,8 @@
             );
         });
       });
-      
-        
+
+
 
     },
 
@@ -836,49 +836,49 @@
 
     },
 
-    titleSplit_2: function(){
-      if ($('.tmp-title-split').length) {				
-        let	 staggerAmount 		= 0.03,
-           translateXValue	= 20,
-           delayValue 		= 0.1,
-           easeType 			= "power2.out",
-           animatedTextElements = document.querySelectorAll('.tmp-title-split');
-        
+    titleSplit_2: function () {
+      if ($('.tmp-title-split').length) {
+        let staggerAmount = 0.03,
+          translateXValue = 20,
+          delayValue = 0.1,
+          easeType = "power2.out",
+          animatedTextElements = document.querySelectorAll('.tmp-title-split');
+
         animatedTextElements.forEach((element) => {
           let animationSplitText = new SplitText(element, { type: "chars, words" });
-            gsap.from(animationSplitText.chars, {
-              duration: 1,
-              delay: delayValue,
-              x: translateXValue,
-              autoAlpha: 0,
-              stagger: staggerAmount,
-              ease: easeType,
-              scrollTrigger: { trigger: element, start: "top 85%"},
-            });
-        });		
+          gsap.from(animationSplitText.chars, {
+            duration: 1,
+            delay: delayValue,
+            x: translateXValue,
+            autoAlpha: 0,
+            stagger: staggerAmount,
+            ease: easeType,
+            scrollTrigger: { trigger: element, start: "top 85%" },
+          });
+        });
       }
     },
 
-    tiltAnimation: function(){
+    tiltAnimation: function () {
 
       let tiltAnimation = document.getElementsByClassName('tilt-container');
 
-      if(tiltAnimation.length){
+      if (tiltAnimation.length) {
         $(document).ready(function () {
           let tiltContainer = document.querySelector('.tilt-container');
-        
+
           if (tiltContainer) {
             tiltContainer.addEventListener('mousemove', (e) => {
               const xPos = (window.innerWidth / 2 - e.pageX) / 80;
               const yPos = (window.innerHeight / 2 - e.pageY) / 80;
-        
+
               tiltContainer.style.transform = `rotateX(${yPos}deg) rotateY(${xPos}deg)`;
             });
-        
+
             tiltContainer.addEventListener('mouseenter', () => {
               tiltContainer.style.transition = 'none';
             });
-        
+
             tiltContainer.addEventListener('mouseleave', () => {
               tiltContainer.style.transition = 'transform 0.3s';
               tiltContainer.style.transform = 'none';
@@ -889,16 +889,16 @@
 
     },
 
-    lineAnimation: function(){
+    lineAnimation: function () {
       let line_animation = document.querySelectorAll('.for-animation-inner');
       if (line_animation.length) {
         const parent = document.querySelector('.for-animation-inner');
         const line1 = document.querySelector('.cta__line-1');
         const line2 = document.querySelector('.cta__line-2');
-    
+
         function animateLines() {
           const parentHeight = parent.offsetWidth;
-    
+
           // Animating the first line using Timeline
           gsap.killTweensOf(line1);
           gsap.set(line1, { x: 0, opacity: 0 });
@@ -910,7 +910,7 @@
             .to(line1, { duration: 0.3, opacity: 1 })
             .to(line1, { duration: 4, x: parentHeight, ease: 'none' }, '<')
             .to(line1, { duration: 0.3, opacity: 0 }, 3);
-    
+
           // Animating the Second Line Using Timeline
           gsap.killTweensOf(line2);
           gsap.set(line2, { x: 0, opacity: 0 });
@@ -923,7 +923,7 @@
             .to(line2, { duration: 4, x: -parentHeight, ease: 'none' }, '<')
             .to(line2, { duration: 0.3, opacity: 0 }, 3);
         }
-    
+
         animateLines();
       }
     },
@@ -950,12 +950,12 @@ updateDimensions();
 // Add resize event listener to update dimensions
 window.addEventListener('resize', updateDimensions);
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var box = document.querySelector(".scrollToTop");
   if (box) {
     var water = box.querySelector(".water");
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       var scrollPosition = window.scrollY;
       var percent = Math.min(
         Math.floor((scrollPosition / documentHeight) * 100),
@@ -985,8 +985,44 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   document.body.classList.add("preloader-active");
-  window.addEventListener('load', function() {
+  window.addEventListener('load', function () {
     removePreloader();
+  });
+
+
+  // Codigo para traducir
+  // Mismo código JavaScript que arriba
+  const languageToggle = document.getElementById('language-toggle');
+  let currentLanguage = 'es';
+
+  function toggleLanguage() {
+    currentLanguage = currentLanguage === 'es' ? 'en' : 'es';
+    languageToggle.textContent = currentLanguage.toUpperCase();
+    localStorage.setItem('preferredLanguage', currentLanguage);
+
+    // Aquí implementarías el cambio real de idioma
+    updateContentLanguage(currentLanguage);
+  }
+
+  function updateContentLanguage(lang) {
+    // Esta función cambiaría todo el contenido de la página
+    // Necesitarías tener elementos con data attributes como data-lang="es" o data-lang="en"
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      if (el.dataset.lang === lang) {
+        el.style.display = 'block';
+      } else {
+        el.style.display = 'none';
+      }
+    });
+  }
+
+  languageToggle.addEventListener('click', toggleLanguage);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'es';
+    currentLanguage = savedLanguage;
+    languageToggle.textContent = currentLanguage.toUpperCase();
+    updateContentLanguage(currentLanguage);
   });
 });
 
@@ -997,31 +1033,31 @@ document.addEventListener('DOMContentLoaded', function() {
 const form = document.getElementById('contact-form');
 
 form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+  e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
 
-    // Endpoint de Formspree
-    const endpoint = 'https://formspree.io/f/xkgovnav';
+  // Endpoint de Formspree
+  const endpoint = 'https://formspree.io/f/xkgovnav';
 
-    // Datos del formulario
-    const formData = new FormData(form);
+  // Datos del formulario
+  const formData = new FormData(form);
 
-    // Envía los datos usando Fetch API
-    fetch(endpoint, {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
+  // Envía los datos usando Fetch API
+  fetch(endpoint, {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
     .then(response => {
-        if (response.ok) {
-            // Muestra el mensaje de éxito
-            form.reset();
-        } else {
-            throw new Error('Hubo un problema al enviar el formulario.');
-        }
+      if (response.ok) {
+        // Muestra el mensaje de éxito
+        form.reset();
+      } else {
+        throw new Error('Hubo un problema al enviar el formulario.');
+      }
     })
     .catch(error => {
-        alert('Ocurrió un error: ' + error.message);
+      alert('Ocurrió un error: ' + error.message);
     });
 });
